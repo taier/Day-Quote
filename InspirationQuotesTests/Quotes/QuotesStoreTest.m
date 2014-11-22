@@ -81,4 +81,9 @@
     XCTAssertEqual(returnArray.count, 4);
 }
 
+- (void)testIsQuoteFavoritedWithID {
+    [QuotesStore addToFavoriteQuoteWithID:10];
+    XCTAssert([QuotesStore isQuoteFavoritedWithID:10]);
+}
+
 @end

@@ -21,6 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *lablePrice;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCoffe;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelNotification;
+@property (weak, nonatomic) IBOutlet UILabel *labelLikedQuote;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFavorite;
+
+
 @end
 
 @implementation SettingsViewController
@@ -32,6 +37,10 @@
     [self setUpCoffe];
     self.buttonBack.transform = CGAffineTransformMakeRotation(M_PI_2);
     [self.switchNotification setOn:[appDelegate notificationsOn]];
+}
+
+- (void)viewDidLayoutSubviews {
+    [self setUpCorrectAppereance];
 }
 
 - (void)setUpCoffe {
@@ -83,6 +92,34 @@
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     return [ModalTransitionAnimator new];
+}
+
+#warning BURN THIS SHIT WITH FIRE ASAP!!!
+- (void)setUpCorrectAppereance {
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat correctY = screenSize.height / 3.8;
+    // Place stuff on correct Y
+    [self.labelNotification setFrame:CGRectMake(self.labelNotification.frame.origin.x,
+                                               correctY,
+                                               self.labelNotification.frame.size.width,
+                                               self.labelNotification.frame.size.height)];
+    
+    [self.labelLikedQuote setFrame:CGRectMake(self.labelLikedQuote.frame.origin.x,
+                                                correctY,
+                                                self.labelLikedQuote.frame.size.width,
+                                                self.labelLikedQuote.frame.size.height)];
+    
+    [self.buttonFavorite setFrame:CGRectMake(self.buttonFavorite.frame.origin.x,
+                                              correctY + 43,
+                                              self.buttonFavorite.frame.size.width,
+                                              self.buttonFavorite.frame.size.height)];
+    
+    [self.switchNotification setFrame:CGRectMake(self.switchNotification.frame.origin.x,
+                                             correctY + 50,
+                                             self.switchNotification.frame.size.width,
+                                             self.switchNotification.frame.size.height)];
+    
 }
 
 @end

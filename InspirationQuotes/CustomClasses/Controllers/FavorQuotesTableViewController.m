@@ -20,6 +20,7 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBack;
+@property (weak, nonatomic) IBOutlet UILabel *labelNoLikedQuotes;
 
 @end
 
@@ -54,6 +55,13 @@
 
 - (void)initQuoteArray {
     _quotesArray = [QuotesStore getAllFavoritesQuotes];
+    if (!_quotesArray.count) {
+        self.labelNoLikedQuotes.hidden = NO;
+        self.tableView.userInteractionEnabled = NO;
+    } else {
+        self.labelNoLikedQuotes.hidden = YES;
+        self.tableView.userInteractionEnabled = YES;
+    }
     [self.tableView reloadData];
 }
 

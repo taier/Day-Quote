@@ -51,7 +51,7 @@
                                             <action selector="onFavoriteButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m3C-6g-Yzc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edM-cB-QPy" userLabel="Quote Text">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="edM-cB-QPy" userLabel="Quote Text">
                                         <rect key="frame" x="20" y="-12" width="288" height="245"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="288" id="16I-Dd-HJp"/>
@@ -232,16 +232,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TM-T1-8mc">
-                                <rect key="frame" x="16" y="93" width="137" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="137" id="NN0-7h-d1r"/>
-                                    <constraint firstAttribute="height" constant="31" id="SIM-Gq-I1R"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W83-df-u12">
                                 <rect key="frame" x="60" y="150" width="51" height="31"/>
                                 <constraints>
@@ -301,6 +291,16 @@
                                     <action selector="onLikedQuotesButtonPress:" destination="4Fo-Cn-RMp" eventType="touchUpInside" id="XHB-Tt-eGM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TM-T1-8mc">
+                                <rect key="frame" x="16" y="93" width="137" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="NN0-7h-d1r"/>
+                                    <constraint firstAttribute="height" constant="31" id="SIM-Gq-I1R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -426,6 +426,9 @@
                     <connections>
                         <outlet property="buttonBack" destination="7FC-Vw-z4U" id="CXt-ys-2JL"/>
                         <outlet property="buttonCoffe" destination="Ieq-5s-FBg" id="B21-31-Lb0"/>
+                        <outlet property="buttonFavorite" destination="6bg-re-tgD" id="RpQ-rd-aI4"/>
+                        <outlet property="labelLikedQuote" destination="y4n-QX-jgg" id="lLq-4A-nxf"/>
+                        <outlet property="labelNotification" destination="0TM-T1-8mc" id="tgh-g7-qEz"/>
                         <outlet property="lablePrice" destination="m4y-8o-WKM" id="hej-cP-MJa"/>
                         <outlet property="switchNotification" destination="W83-df-u12" id="FVY-dK-1q4"/>
                         <segue destination="4qL-D6-Na9" kind="modal" identifier="LIKED_QUOTES_SEQUE_ID" id="85t-uZ-GXZ"/>
@@ -498,14 +501,28 @@
                                     <action selector="onBackButtonPress:" destination="iQd-PQ-05g" eventType="touchUpInside" id="lGt-1R-3sB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="There is no liked quotes yet, use &quot;Like Button&quot; to add one! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzG-et-7eb">
+                                <rect key="frame" x="0.0" y="106" width="320" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="5yc-Gi-STm"/>
+                                    <constraint firstAttribute="height" constant="374" id="IeG-tZ-Bd0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="GsP-5u-gXi" secondAttribute="trailing" constant="-16" id="8nU-do-Pc9"/>
+                            <constraint firstItem="RzG-et-7eb" firstAttribute="leading" secondItem="hA5-P7-bTd" secondAttribute="leadingMargin" constant="-16" id="93E-Lb-OYt"/>
                             <constraint firstItem="GsP-5u-gXi" firstAttribute="top" secondItem="UT1-wM-idZ" secondAttribute="bottom" constant="27" id="9kM-g9-FTm"/>
                             <constraint firstItem="GsP-5u-gXi" firstAttribute="leading" secondItem="hA5-P7-bTd" secondAttribute="leadingMargin" constant="-16" id="XGV-al-GjE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RzG-et-7eb" secondAttribute="trailing" constant="-16" id="cgC-8s-5KX"/>
                             <constraint firstItem="UT1-wM-idZ" firstAttribute="top" secondItem="Z6s-5E-iXY" secondAttribute="bottom" constant="19" id="h0f-n2-Ecr"/>
                             <constraint firstAttribute="centerX" secondItem="UT1-wM-idZ" secondAttribute="centerX" id="heg-nB-bCi"/>
+                            <constraint firstItem="RzG-et-7eb" firstAttribute="top" secondItem="UT1-wM-idZ" secondAttribute="bottom" constant="27" id="k52-om-epx"/>
+                            <constraint firstItem="hJI-24-26L" firstAttribute="top" secondItem="RzG-et-7eb" secondAttribute="bottom" id="ooZ-Mu-Eef"/>
                             <constraint firstItem="hJI-24-26L" firstAttribute="top" secondItem="GsP-5u-gXi" secondAttribute="bottom" id="x91-K9-nXe"/>
                         </constraints>
                     </view>
@@ -513,6 +530,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttonBack" destination="UT1-wM-idZ" id="TJN-oL-kgT"/>
+                        <outlet property="labelNoLikedQuotes" destination="RzG-et-7eb" id="Qwo-2j-1GZ"/>
                         <outlet property="tableView" destination="GsP-5u-gXi" id="mqg-d7-Ywd"/>
                         <segue destination="WPg-lo-OZW" kind="push" identifier="QUOTE_DESCRIPTION_SEGUE" id="SPl-WJ-7xx"/>
                     </connections>
@@ -582,7 +600,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jM-S6-25T" userLabel="Quote Text">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1jM-S6-25T" userLabel="Quote Text">
                                         <rect key="frame" x="20" y="0.0" width="281" height="233"/>
                                         <string key="text">Don't limit yourself. Many people limit themselves to what they think they can do. You can go as far as your mind lets you. What you believe, remember, you can achieve.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>

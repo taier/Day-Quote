@@ -23,6 +23,8 @@
     return self;
 }
 
+#pragma mark Publuc methods
+
 + (Quote *)getRandomQuote {
     Quote *returnQuote = [[Quote alloc]init];
     NSArray *rawDataArray = [[DayQuoteDBManager sharedInstance] getRanomdQuoteData];
@@ -55,6 +57,12 @@
     }
     return [returnQuoteArray copy];
 }
+
++ (BOOL)isQuoteFavoritedWithID:(NSInteger)qID {
+    return [[DayQuoteDBManager sharedInstance] isQuoteFavoritedWitID:qID];
+}
+
+#pragma mark Private Methods
 
 + (Quote *)composeQuoteFromRawArray:(NSArray *)rawArray {
     Quote *returnQuote = [[Quote alloc]init];

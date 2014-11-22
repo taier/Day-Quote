@@ -14,7 +14,7 @@
 
 #define SWHIPE_TEXT_ANIMATION_RESTART_TIME 10
 #define SWHIPE_TEXT_ANIMATION_FIRST_TIME 2
-#define QUOTE_CHANGE_ANIMATION_DURATION 0.7
+#define QUOTE_CHANGE_ANIMATION_DURATION 0.4
 #define FAVORITE_TIME_ANIMATION 0.3
 #define FAVORITE_BUTTON_ACTIVE_COLOR [UIColor blackColor]
 #define FAVORITE_BUTTON_INACTIVE_COLOR [UIColor colorWithRed:230/255.f green:230/255.f blue:230/255.f alpha:1]
@@ -25,7 +25,8 @@
  Create prefix file
  */
 
-#define APP_NAME @"DayQuote"
+#define APP_NAME @"via Day Quote App"
+#define MY_TWITTER @"@TheTaier"
 
 @interface ViewController () <UIDocumentInteractionControllerDelegate,UIViewControllerTransitioningDelegate> {
     UIDocumentInteractionController *docController;
@@ -42,14 +43,20 @@
 
 @implementation ViewController
 
+#pragma mark Live Circle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.labelSwipeToRefresh.alpha = 0;
-    self.buttonFavorite.adjustsImageWhenHighlighted = NO;
     [self performSelector:@selector(animateHelpTextForSwipe) withObject:nil afterDelay:SWHIPE_TEXT_ANIMATION_FIRST_TIME];
     [self changeQuoteAnimated:NO];
     [self setupGesture];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self checkCurrentQuoteForFavoriteAfterLoad];
 }
 
 - (void)setupGesture {
@@ -73,10 +80,10 @@
 }
 
 - (IBAction)onFacebookButtonPress:(id)sender {
-    [[IndieGamesHelper sharedInstance] shareFacebookInViewController:self andText:[self getSharingText]];
+    [[IndieGamesHelper sharedInstance] shareFacebookInViewController:self andText:[self getSharingTextForFacebook:YES]];
 }
 - (IBAction)onTwitterButtonPress:(id)sender {
-    [[IndieGamesHelper sharedInstance] shareTwitterInViewController:self andText:[self getSharingText]];
+    [[IndieGamesHelper sharedInstance] shareTwitterInViewController:self andText:[self getSharingTextForFacebook:NO]];
 }
 - (IBAction)onInstagramButtonPress:(id)sender {
     
@@ -84,11 +91,11 @@
     UIImage *imageToShare = [self getImageOfQuote];
     self.buttonFavorite.hidden = NO;
     
-    [[IndieGamesHelper sharedInstance] shareInstagramInViewController:self withImage:imageToShare andText:@"Today Quote via @DayQuote"];
+    [[IndieGamesHelper sharedInstance] shareInstagramInViewController:self withImage:imageToShare andText:@"Today Quote via @DayQuoteApp"];
 }
 
-- (NSString *)getSharingText {
-    return [NSString stringWithFormat:@"%@ - %@ #%@", self.labelQuote.text, self.labelAuthor.text, APP_NAME];
+- (NSString *)getSharingTextForFacebook:(BOOL)facebook {
+    return [NSString stringWithFormat:@"%@ - %@ %@", self.labelQuote.text, self.labelAuthor.text, facebook ? APP_NAME : MY_TWITTER];
 }
 
 #pragma mark Transition
@@ -171,6 +178,12 @@
     } else {
         self.buttonFavorite.tintColor = FAVORITE_BUTTON_INACTIVE_COLOR;
     }
+}
+
+- (void)checkCurrentQuoteForFavoriteAfterLoad {
+    BOOL quoteFavorited = [QuotesStore isQuoteFavoritedWithID:currentQuote.qID];
+    currentQuote.favorited = quoteFavorited;
+    [self changeFavoriteButtonToActive:quoteFavorited];
 }
 
 - (UIImage *)getImageOfQuote {

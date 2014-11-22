@@ -27,7 +27,9 @@
 #import "IndieGamesHelperDefines.h"
 @import StoreKit;
 
-@interface InAppPurchaseHandler () <SKPaymentTransactionObserver,SKProductsRequestDelegate>
+@interface InAppPurchaseHandler () <SKPaymentTransactionObserver,SKProductsRequestDelegate> {
+    SKProductsRequest *_productsRequest;
+}
 
 @end
 
@@ -38,7 +40,7 @@ SINGLETON_GCD(InAppPurchaseHandler);
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.isAdRemoved = [[[NSUserDefaults standardUserDefaults] valueForKey:USER_DEFAULTS_ADS_KEY]boolValue];
+        self.isAdRemoved = [[[NSUserDefaults standardUserDefaults] valueForKey:USER_DEFAULTS_ADS_KEY] boolValue];
     }
     return self;
 }
@@ -49,9 +51,9 @@ SINGLETON_GCD(InAppPurchaseHandler);
     NSLog(@"User requests to remove ads");
     if([SKPaymentQueue canMakePayments]){
         NSLog(@"User can make payments");
-        SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:IN_APP_PURCHASE_ID]];
-        productsRequest.delegate = self;
-        [productsRequest start];
+        _productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:IN_APP_PURCHASE_ID]];
+        _productsRequest.delegate = self;
+        [_productsRequest start];
     } else{
         NSLog(@"User cannot make payments due to parental controls");
         //this is called the user cannot make payments, most likely due to parental controls
@@ -68,6 +70,7 @@ SINGLETON_GCD(InAppPurchaseHandler);
 
 -(void)p_purchase:(SKProduct *)product {
     SKPayment *payment = [SKPayment paymentWithProduct:product];
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 

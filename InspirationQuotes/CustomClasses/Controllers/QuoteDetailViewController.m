@@ -10,9 +10,12 @@
 #import "IndieGamesHelper.h"
 #import "QuotesStore.h"
 
-#define APP_NAME @"DayQuote"
 #define FAVORITE_BUTTON_ACTIVE_COLOR [UIColor blackColor]
 #define FAVORITE_BUTTON_INACTIVE_COLOR [UIColor colorWithRed:230/255.f green:230/255.f blue:230/255.f alpha:1]
+
+
+#define APP_NAME @"via Day Quote App"
+#define MY_TWITTER @"@TheTaier"
 
 @interface QuoteDetailViewController () {
     Quote *_diplayedQuote;
@@ -70,17 +73,16 @@
     return theImage;
 }
 
-- (NSString *)getSharingText {
-    return [NSString stringWithFormat:@"%@ - %@ #%@", self.labelQuote.text, self.labelAuthor.text, APP_NAME];
+- (NSString *)getSharingTextForFacebook:(BOOL)facebook {
+    return [NSString stringWithFormat:@"%@ - %@ %@", self.labelQuote.text, self.labelAuthor.text, facebook ? APP_NAME : MY_TWITTER];
 }
-
 #pragma mark Buttons
 
 - (IBAction)onFacebookShareButtonPress:(id)sender {
-      [[IndieGamesHelper sharedInstance] shareFacebookInViewController:self andText:[self getSharingText]];
+      [[IndieGamesHelper sharedInstance] shareFacebookInViewController:self andText:[self getSharingTextForFacebook:YES]];
 }
 - (IBAction)onTwitterShareButtonPress:(id)sender {
-    [[IndieGamesHelper sharedInstance] shareTwitterInViewController:self andText:[self getSharingText]];
+    [[IndieGamesHelper sharedInstance] shareTwitterInViewController:self andText:[self getSharingTextForFacebook:NO]];
 }
 - (IBAction)onInstagramShareButtonPress:(id)sender {
     
@@ -88,7 +90,7 @@
     UIImage *imageToShare = [self getImageOfQuote];
     self.buttonFavorite.hidden = NO;
     
-    [[IndieGamesHelper sharedInstance] shareInstagramInViewController:self withImage:imageToShare andText:@"Today Quote via @DayQuote"];
+    [[IndieGamesHelper sharedInstance] shareInstagramInViewController:self withImage:imageToShare andText:@"Today Quote via @DayQuoteApp"];
 }
 - (IBAction)onFavoriteButtonPress:(id)sender {
     if (_diplayedQuote.favorited) {

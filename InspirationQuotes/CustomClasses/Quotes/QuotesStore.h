@@ -37,4 +37,11 @@
  * @return NSArray with Quotes objects
  */
 + (NSArray *)getAllFavoritesQuotes;
+/**
+ * Check if quote is favorited
+ *
+ * @param qID ID of quote to check
+ * @return YES is favorited
+ */
++ (BOOL)isQuoteFavoritedWithID:(NSInteger)qID;
 @end

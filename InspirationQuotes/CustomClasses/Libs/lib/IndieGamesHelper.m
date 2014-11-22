@@ -98,8 +98,10 @@ SINGLETON_GCD(IndieGamesHelper);
 #pragma mark In App Purchases delegate
 
 - (void)removeADSSuccess {
-    if ([self.delegate respondsToSelector:@selector(removeADSSuccess)]) {
-        [self.delegate removeADSSuccess];
+    for (id<IndieGamesHelperDeleate> delegateReceiver in _delegatesReceiversArray) {
+        if ([delegateReceiver respondsToSelector:@selector(removeADSSuccess)]) {
+            [delegateReceiver removeADSSuccess];
+        }
     }
 }
 
