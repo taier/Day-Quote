@@ -21,5 +21,9 @@
 - (NSURL *)applicationDocumentsDirectory;
 
 
+- (void)setNofificationFromSettings:(BOOL)fromSettings;
+- (void)removeNotification;
+- (BOOL)notificationsOn;
+
 @end
 

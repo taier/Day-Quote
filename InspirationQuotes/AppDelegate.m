@@ -8,15 +8,65 @@
 
 #import "AppDelegate.h"
 
+#define NOTIFICATION_OFF_KEY @"Notification_OFF"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+- (BOOL)notificationsOn {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return ![[defaults objectForKey:NOTIFICATION_OFF_KEY] integerValue];
+}
+
+- (void)setNofificationFromSettings:(BOOL)fromSettings {
+    // Variables
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    
+    if (fromSettings) {
+        [defaults removeObjectForKey:NOTIFICATION_OFF_KEY];
+    }
+    
+    NSInteger notificationsOFF = [[defaults objectForKey:NOTIFICATION_OFF_KEY] integerValue];
+    NSArray *oldNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    if (notificationsOFF) return;
+    
+    if (!oldNotifications.count) {
+        // First Launch
+        NSCalendar *calendar = [NSCalendar currentCalendar]; // gets default calendar
+        NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:[NSDate date]]; // gets the year, month, day,hour and minutesfor today's date
+        [components setHour:9];
+        [components setMinute:00];
+        // Set the fire date/time
+        [localNotification setFireDate:[calendar dateFromComponents:components]];
+        [localNotification setTimeZone:[NSTimeZone defaultTimeZone]];
+        [localNotification setAlertBody:@"New Quote is ready!" ];
+        [localNotification setRepeatInterval:NSDayCalendarUnit];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
+        [defaults synchronize];
+}
+
+- (void)removeNotification {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:1 forKey:NOTIFICATION_OFF_KEY];
+    [defaults synchronize];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound
+                                                                                                              categories:nil]];
+    }
+    
+    [self setNofificationFromSettings:NO]; // if needed
+ 
     return YES;
 }
 

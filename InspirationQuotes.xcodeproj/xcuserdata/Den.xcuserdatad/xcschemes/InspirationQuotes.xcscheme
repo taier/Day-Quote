@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B793B5FB1A1B751300FB29C4"
-               BuildableName = "InspirationQuotes.app"
+               BuildableName = "DayQuote.app"
                BlueprintName = "InspirationQuotes"
                ReferencedContainer = "container:InspirationQuotes.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B793B5FB1A1B751300FB29C4"
-            BuildableName = "InspirationQuotes.app"
+            BuildableName = "DayQuote.app"
             BlueprintName = "InspirationQuotes"
             ReferencedContainer = "container:InspirationQuotes.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B793B5FB1A1B751300FB29C4"
-            BuildableName = "InspirationQuotes.app"
+            BuildableName = "DayQuote.app"
             BlueprintName = "InspirationQuotes"
             ReferencedContainer = "container:InspirationQuotes.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B793B5FB1A1B751300FB29C4"
-            BuildableName = "InspirationQuotes.app"
+            BuildableName = "DayQuote.app"
             BlueprintName = "InspirationQuotes"
             ReferencedContainer = "container:InspirationQuotes.xcodeproj">
          </BuildableReference>
