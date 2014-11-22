@@ -10,4 +10,9 @@
 
 @interface Quote : NSObject
 
+@property (assign, nonatomic) NSInteger qID;
+@property (strong, nonatomic) NSString *quote;
+@property (strong, nonatomic) NSString *author;
+@property (assign, nonatomic) BOOL favorited;
+
 @end

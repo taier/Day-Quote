@@ -10,9 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "QuotesStore.h"
 
-@interface QuotesStoreTest : XCTestCase {
-    QuotesStore *qStore;
-}
+@interface QuotesStoreTest : XCTestCase
 
 @end
 
@@ -20,7 +18,6 @@
 
 - (void)setUp {
     [super setUp];
-    qStore = [[QuotesStore alloc]init];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -30,29 +27,40 @@
 }
 
 - (void)testQuoteExist {
-    XCTAssert(qStore.quote);
+    Quote *quote = [QuotesStore getRandomQuote];
+    XCTAssert(quote.quote);
 }
 
 - (void)testAuthorExist {
-    XCTAssert(qStore.author);
+    Quote *quote = [QuotesStore getRandomQuote];
+    XCTAssert(quote.author);
 }
 
 - (void)testRandomQuotes {
     ///TBD Imporve this test
-    XCTAssertNotEqualObjects(qStore.quote, qStore.quote);
+    Quote *quote1 = [QuotesStore getRandomQuote];
+    Quote *quote2 = [QuotesStore getRandomQuote];
+    XCTAssertNotEqualObjects(quote1.quote, quote2.quote);
 }
 
 - (void)testRandomQuotesAuthors {
-    NSString *firstQuote = qStore.quote;
-    NSString *firstAuthor = qStore.author;
-    NSString *secondQuote = qStore.quote;
-    NSString *secondAuthor = qStore.author;
+    Quote *quote1 = [QuotesStore getRandomQuote];
+    Quote *quote2 = [QuotesStore getRandomQuote];
     
-    if ([firstQuote isEqualToString:secondQuote]) {
-        XCTAssertEqualObjects(firstAuthor, secondAuthor);
+    if ([quote1.quote isEqualToString:quote2.quote]) {
+        XCTAssertEqualObjects(quote1.author, quote2.author);
     } else {
-        XCTAssertNotEqual(firstAuthor, secondAuthor);
+        XCTAssertNotEqual(quote1.author, quote2.author);
     }
+}
+
+- (void)testAddToFavoriteQuoteWithID {
+    XCTAssert([QuotesStore addToFavoriteQuoteWithID:2]);
+}
+
+- (void)testRemoveFromFavoriteQuoteWithID {
+    [QuotesStore addToFavoriteQuoteWithID:2];
+    XCTAssert([QuotesStore removeFromFavoriteQuoteWithID:2]);
 }
 
 @end

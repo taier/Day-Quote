@@ -50,14 +50,17 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-fa-4Yo">
-                                        <rect key="frame" x="20" y="267" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-fa-4Yo" userLabel="Fav Button">
+                                        <rect key="frame" x="20" y="266" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="7qO-7h-h6l"/>
                                             <constraint firstAttribute="width" constant="40" id="nAC-Hs-Uwr"/>
                                         </constraints>
                                         <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="Fav Icon.png"/>
+                                        <connections>
+                                            <action selector="onFavoriteButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m3C-6g-Yzc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,6 +154,7 @@
                     <navigationItem key="navigationItem" id="YwN-4Z-FCl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="buttonFavorite" destination="VVg-fa-4Yo" id="WL5-h6-MFv"/>
                         <outlet property="labelAuthor" destination="hnH-c5-DKJ" id="VSv-KK-whB"/>
                         <outlet property="labelQuote" destination="edM-cB-QPy" id="KD3-g9-NXt"/>
                         <outlet property="labelSwipeToRefresh" destination="KHy-v5-FxA" id="gPK-UC-o5a"/>

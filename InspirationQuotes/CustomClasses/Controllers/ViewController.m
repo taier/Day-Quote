@@ -14,7 +14,10 @@
 
 #define SWHIPE_TEXT_ANIMATION_RESTART_TIME 10
 #define SWHIPE_TEXT_ANIMATION_FIRST_TIME 2
-#define QUOTE_CHANGE_ANIMATION_DURATION 2
+#define QUOTE_CHANGE_ANIMATION_DURATION 0.7
+#define FAVORITE_TIME_ANIMATION 0.3
+#define FAVORITE_BUTTON_ACTIVE_COLOR [UIColor blackColor]
+#define FAVORITE_BUTTON_INACTIVE_COLOR [UIColor colorWithRed:230/255.f green:230/255.f blue:230/255.f alpha:1]
 
 /* TBD
  Move Instagram sharing in to lib
@@ -26,13 +29,14 @@
 
 @interface ViewController () <UIDocumentInteractionControllerDelegate,UIViewControllerTransitioningDelegate> {
     UIDocumentInteractionController *docController;
-    QuotesStore *quoteStore;
+    Quote *currentQuote;
     BOOL refreshedBySwipe;
 }
 @property (weak, nonatomic) IBOutlet UILabel *labelSwipeToRefresh;
 @property (weak, nonatomic) IBOutlet UILabel *labelQuote;
 @property (weak, nonatomic) IBOutlet UILabel *labelAuthor;
 @property (weak, nonatomic) IBOutlet UIView *viewQuote;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFavorite;
 
 @end
 
@@ -40,8 +44,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    quoteStore = [[QuotesStore alloc] init];
     self.labelSwipeToRefresh.alpha = 0;
+    self.buttonFavorite.adjustsImageWhenHighlighted = NO;
     [self performSelector:@selector(animateHelpTextForSwipe) withObject:nil afterDelay:SWHIPE_TEXT_ANIMATION_FIRST_TIME];
     [self changeQuoteAnimated:NO];
     [self setupGesture];
@@ -52,6 +56,17 @@
     UISwipeGestureRecognizer *gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandler:)];
     [gestureRecognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
     [self.view addGestureRecognizer:gestureRecognizer];
+}
+- (IBAction)onFavoriteButtonPress:(id)sender {
+    if (currentQuote.favorited) {
+        [QuotesStore removeFromFavoriteQuoteWithID:currentQuote.qID];
+        currentQuote.favorited = NO;
+        [self changeFavoriteButtonToActive:NO];
+    } else {
+        [QuotesStore addToFavoriteQuoteWithID:currentQuote.qID];
+        currentQuote.favorited = YES;
+        [self changeFavoriteButtonToActive:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -146,22 +161,27 @@
 }
 
 - (void)changeQuoteAnimated:(BOOL)animated {
+    currentQuote = [QuotesStore getRandomQuote];
     if (animated) {
-        [UIView animateWithDuration:3 animations:^{
+        [UIView animateWithDuration:QUOTE_CHANGE_ANIMATION_DURATION animations:^{
             self.labelQuote.alpha = 0;
             self.labelAuthor.alpha = 0;
+            self.buttonFavorite.alpha = 0;
         } completion:^(BOOL fin){
-            self.labelQuote.text = quoteStore.quote;
-            self.labelAuthor.text = quoteStore.author;
-            [UIView animateWithDuration:2 animations:^{
+            self.labelQuote.text = currentQuote.quote;
+            self.labelAuthor.text = currentQuote.author;
+            [self changeFavoriteButtonToActive:currentQuote.favorited];
+            [UIView animateWithDuration:QUOTE_CHANGE_ANIMATION_DURATION animations:^{
                 self.labelQuote.alpha = 1;
                 self.labelAuthor.alpha = 1;
+                self.buttonFavorite.alpha = 1;
             } completion:^(BOOL fin){
             }];
         }];
     } else {
-        self.labelQuote.text = quoteStore.quote;
-        self.labelAuthor.text = quoteStore.author;
+        self.labelQuote.text = currentQuote.quote;
+        self.labelAuthor.text = currentQuote.author;
+        [self changeFavoriteButtonToActive:currentQuote.favorited];
     }
 }
 
@@ -170,6 +190,17 @@
 -(void)swipeHandler:(UISwipeGestureRecognizer *)recognizer {
     refreshedBySwipe = YES;
     [self changeQuoteAnimated:YES];
+}
+
+#pragma mark Private Methods
+
+- (void)changeFavoriteButtonToActive:(BOOL)active {
+    if (active) {
+        self.buttonFavorite.tintColor = FAVORITE_BUTTON_ACTIVE_COLOR;
+        
+    } else {
+        self.buttonFavorite.tintColor = FAVORITE_BUTTON_INACTIVE_COLOR;
+    }
 }
 
 @end

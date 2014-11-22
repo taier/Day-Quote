@@ -8,40 +8,41 @@
 
 #import "QuotesStore.h"
 #import "NSMutableArray+RandomObject.h"
+#import "DayQuoteDBManager.h"
 
-#define QUOTE_KEY @"Quote_Key"
-#define AUTHOR_KEY @"Author_Key"
+#define POSITION_ID 0
+#define POSITION_QUOTE 1
+#define POSITION_AUTHOR 2
 
-@implementation QuotesStore {
-    NSMutableArray *quotesDictArray;
-    NSString *currentQuoteAuthor;
-}
+@implementation QuotesStore
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        quotesDictArray = [self getRandomQuotesDictsArray];
     }
     return self;
 }
 
-- (NSMutableArray *)getRandomQuotesDictsArray {
-    NSMutableArray *returnArray = [NSMutableArray new];
-    [returnArray addObject:@{QUOTE_KEY:@"Some Cool quote", AUTHOR_KEY: @"Some Cool Author"}];
-    [returnArray addObject:@{QUOTE_KEY:@"Some Cool quote 2",AUTHOR_KEY: @"Some Cool Author 2"}];
++ (Quote *)getRandomQuote {
+    Quote *returnQuote = [[Quote alloc]init];
+    NSArray *rawDataArray = [[DayQuoteDBManager sharedInstance] getRanomdQuoteData];
+    NSArray *dataArray = [rawDataArray firstObject];
+    returnQuote.qID = [(NSString *)dataArray[POSITION_ID] integerValue];
+    returnQuote.quote = (NSString *)dataArray[POSITION_QUOTE];
+    returnQuote.author = (NSString *)dataArray[POSITION_AUTHOR];
+    returnQuote.favorited = [[DayQuoteDBManager sharedInstance] isQuoteFavoritedWitID:returnQuote.qID];
     
-    return returnArray;
+    return returnQuote;
 }
 
-- (NSString *)quote {
-    NSDictionary *quoteDict = [quotesDictArray randomObject];
-    if (!quoteDict || ![quoteDict objectForKey:QUOTE_KEY]) { return @"Life is what happens to you while you’re busy making other plans"; } // John Lennon
-    currentQuoteAuthor = [quoteDict objectForKey:AUTHOR_KEY];
-    return [quoteDict objectForKey:QUOTE_KEY];
++ (BOOL)addToFavoriteQuoteWithID:(NSInteger)qID {
+    eTypeQuoteStatus result = [[DayQuoteDBManager sharedInstance] addQuoteToFavoriteWithID:qID];
+    return (result == eTypeQuoteStatusSuccessAdded);
 }
 
-- (NSString *)author {
-    return (currentQuoteAuthor) ? currentQuoteAuthor : @"John Lennon";
++ (BOOL)removeFromFavoriteQuoteWithID:(NSInteger)qID {
+    eTypeQuoteStatus result = [[DayQuoteDBManager sharedInstance] removeQuoteFromFavoriteWithID:qID];
+    return (result == eTypeQuoteStatusSuccessRemoved);
 }
 
 @end

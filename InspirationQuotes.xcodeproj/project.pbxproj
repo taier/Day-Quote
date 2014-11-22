@@ -79,6 +79,8 @@
 		B7C43FD61A209CB0007B564F /* DBManagerTestDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = B7C43FA61A209908007B564F /* DBManagerTestDB.sql */; };
 		B7C43FD71A209CB2007B564F /* DayQuoteDBManagerTestDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = B7C43FD41A209BEE007B564F /* DayQuoteDBManagerTestDB.sql */; };
 		B7C43FD81A20C410007B564F /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F8C1A209860007B564F /* Quote.m */; };
+		B7C43FD91A20DF39007B564F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B793B60C1A1B751300FB29C4 /* Main.storyboard */; };
+		B7C43FDA1A20DF43007B564F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B793B6111A1B751300FB29C4 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -895,6 +897,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C43FDA1A20DF43007B564F /* LaunchScreen.xib in Resources */,
+				B7C43FD91A20DF39007B564F /* Main.storyboard in Resources */,
 				B7C43ECC1A1CF2D7007B564F /* Default-Portrait-736h@3x.png in Resources */,
 				B7C43FCD1A209AD1007B564F /* Fav Icon.png in Resources */,
 				B7C43FC51A209AD1007B564F /* back.pdf in Resources */,
