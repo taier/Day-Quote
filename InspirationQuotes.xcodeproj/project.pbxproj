@@ -78,6 +78,7 @@
 		B7C43FD51A209BEE007B564F /* DayQuoteDBManagerTestDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = B7C43FD41A209BEE007B564F /* DayQuoteDBManagerTestDB.sql */; };
 		B7C43FD61A209CB0007B564F /* DBManagerTestDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = B7C43FA61A209908007B564F /* DBManagerTestDB.sql */; };
 		B7C43FD71A209CB2007B564F /* DayQuoteDBManagerTestDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = B7C43FD41A209BEE007B564F /* DayQuoteDBManagerTestDB.sql */; };
+		B7C43FD81A20C410007B564F /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F8C1A209860007B564F /* Quote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -985,6 +986,7 @@
 				B7C43FB11A209908007B564F /* DayQuoteDBManagerTest.m in Sources */,
 				B7C43FAF1A209908007B564F /* DBManagerTest.m in Sources */,
 				B7C43FB41A209908007B564F /* ViewControllerTest.m in Sources */,
+				B7C43FD81A20C410007B564F /* Quote.m in Sources */,
 				B7C43FB31A209908007B564F /* QuotesStoreTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

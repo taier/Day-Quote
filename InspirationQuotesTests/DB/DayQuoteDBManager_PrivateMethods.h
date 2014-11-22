@@ -11,5 +11,6 @@
 @interface DayQuoteDBManager ()
 
 - (instancetype)initWithDBName:(NSString *)DBName;
+- (eTypeQuoteStatus)addQuoteWithText:(NSString *)text author:(NSString *)author ;
 
 @end

@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class Quote;
-
 typedef enum : NSUInteger {
-    eTypeQuoteAlreadyFavorited = 1,
-    eTypeQuoteSuccessAdded = 2,
-    eTypeQuoteSuccessRemoved = 3,
-    eTypeQuoteNotFavorited = 4
+    eTypeQuoteStatusAlreadyFavorited = 1,
+    eTypeQuoteStatusSuccessAdded = 2,
+    eTypeQuoteStatusSuccessRemoved = 3,
+    eTypeQuoteStatusNotFavorited = 4,
+    eTypeQuoteStatusError = 5,
 } eTypeQuoteStatus;
 
 @interface DayQuoteDBManager : NSObject
@@ -30,26 +29,40 @@ typedef enum : NSUInteger {
  * @param quoteID ID of the quote to add
  * @return Status of performed work
  */
-- (eTypeQuoteStatus)addQuoteToFavoriteWithID:(NSInteger)quoteID; // Unit Test exist
+- (eTypeQuoteStatus)addQuoteToFavoriteWithID:(NSInteger)quoteID; // Unit Test +
 /**
  * Remove quote from favorite Table in ID
  *
  * @param quoteID ID of he quote to remove
  * @return Status of performed work
  */
-- (eTypeQuoteStatus)removeQuoteFromFavoriteWithID:(NSInteger)quoteID; // Unit Test exist
+- (eTypeQuoteStatus)removeQuoteFromFavoriteWithID:(NSInteger)quoteID; // Unit Test +
 /**
  * Return all favorited quotes IDs
  *
  * @return NSArray array with IDs of quotes. IDs is NSNumber, so use iniValue to get real ID
  */
-- (NSArray *)getAllFavoritedQuotesID;
+- (NSArray *)getAllFavoritedQuotesID; // Unit Test +
 /**
- * Return Quote object with required qoute ID
+ * Return NSArray with data from required qoute ID
  *
  * @param quoteID ID of the quote to return
- * @return Quote object
+ * @return NSArray with data from required quote ID
  */
-- (Quote *)getQuoteWithID:(NSInteger)quoteID;
+- (NSArray *)getQuoteDataWithID:(NSInteger)quoteID; // Unit Test +
+
+/**
+ * Check if quote is favorited
+ *
+ * @param quoteID ID of the quote to check
+ * @return YES if favorited, No if not
+ */
+- (BOOL)isQuoteFavoritedWitID:(NSInteger)quoteID; // Unit Test +
+/**
+ * Retur random Quote Data from DB
+ *
+ * @return NSArray with data
+ */
+- (NSArray *)getRanomdQuoteData;
 
 @end

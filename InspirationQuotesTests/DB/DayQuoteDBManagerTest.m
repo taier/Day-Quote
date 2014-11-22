@@ -42,15 +42,48 @@
 
 - (void)testAddQuoteToFavorite {
     eTypeQuoteStatus workStatus;
-    workStatus = [[DayQuoteDBManager sharedInstance] addQuoteToFavoriteWithID:1];
-    XCTAssertEqual(workStatus, eTypeQuoteSuccessAdded);
+    workStatus = [dbManager addQuoteToFavoriteWithID:1];
+    XCTAssertEqual(workStatus, eTypeQuoteStatusSuccessAdded);
 }
 
 - (void)testRemoveQuoteFromFavorite {
     eTypeQuoteStatus workStatus;
-    [[DayQuoteDBManager sharedInstance] addQuoteToFavoriteWithID:1];
-    workStatus = [[DayQuoteDBManager sharedInstance] removeQuoteFromFavoriteWithID:1];
-    XCTAssertEqual(workStatus, eTypeQuoteSuccessRemoved);
+    [dbManager addQuoteToFavoriteWithID:1];
+    workStatus = [dbManager removeQuoteFromFavoriteWithID:1];
+    XCTAssertEqual(workStatus, eTypeQuoteStatusSuccessRemoved);
+}
+
+- (void)testGetAllFavoriteQuotesID {
+     [dbManager addQuoteToFavoriteWithID:1];
+     [dbManager addQuoteToFavoriteWithID:2];
+     [dbManager addQuoteToFavoriteWithID:3];
+    NSArray *resultArray = [dbManager getAllFavoritedQuotesID];
+    XCTAssertEqual(resultArray.count, 3);
+}
+
+- (void)testGetQuoteDataWithID {
+    
+    [dbManager addQuoteWithText:@"TestText" author:@"TestAuthor"];
+    NSArray *resultArray = [dbManager getQuoteDataWithID:1];
+    XCTAssertEqual(resultArray.count, 1);
+}
+
+- (void)testIsQuoteFavoritedWitID {
+    [dbManager addQuoteToFavoriteWithID:2];
+    BOOL favorited = [dbManager isQuoteFavoritedWitID:2];
+    XCTAssert(favorited);
+    BOOL notFavorited = [dbManager isQuoteFavoritedWitID:999];
+    XCTAssertFalse(notFavorited);
+}
+
+- (void)testGetRandomQuoteData {
+    [dbManager addQuoteWithText:@"TestText" author:@"TestAuthor"];
+    [dbManager addQuoteWithText:@"TestText" author:@"TestAuthor"];
+    [dbManager addQuoteWithText:@"TestText" author:@"TestAuthor"];
+    [dbManager addQuoteWithText:@"TestText" author:@"TestAuthor"];
+    
+    NSArray *returnArray = [dbManager getRanomdQuoteData];
+    XCTAssert(returnArray.count);
 }
 
 @end
