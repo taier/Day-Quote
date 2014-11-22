@@ -63,4 +63,22 @@
     XCTAssert([QuotesStore removeFromFavoriteQuoteWithID:2]);
 }
 
+- (void)testGetAllFavoritesQuotes {
+#warning REFACTOR THIS
+    //CeanUp TEMP
+    [QuotesStore removeFromFavoriteQuoteWithID:1];
+    [QuotesStore removeFromFavoriteQuoteWithID:2];
+    [QuotesStore removeFromFavoriteQuoteWithID:3];
+    [QuotesStore removeFromFavoriteQuoteWithID:4];
+    
+    [QuotesStore addToFavoriteQuoteWithID:1];
+    NSArray *returnArray = [QuotesStore getAllFavoritesQuotes];
+    XCTAssertEqual(returnArray.count, 1);
+    [QuotesStore addToFavoriteQuoteWithID:2];
+    [QuotesStore addToFavoriteQuoteWithID:3];
+    [QuotesStore addToFavoriteQuoteWithID:4];
+    returnArray = [QuotesStore getAllFavoritesQuotes];
+    XCTAssertEqual(returnArray.count, 4);
+}
+
 @end

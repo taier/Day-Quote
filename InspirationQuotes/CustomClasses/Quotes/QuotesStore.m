@@ -27,10 +27,7 @@
     Quote *returnQuote = [[Quote alloc]init];
     NSArray *rawDataArray = [[DayQuoteDBManager sharedInstance] getRanomdQuoteData];
     NSArray *dataArray = [rawDataArray firstObject];
-    returnQuote.qID = [(NSString *)dataArray[POSITION_ID] integerValue];
-    returnQuote.quote = (NSString *)dataArray[POSITION_QUOTE];
-    returnQuote.author = (NSString *)dataArray[POSITION_AUTHOR];
-    returnQuote.favorited = [[DayQuoteDBManager sharedInstance] isQuoteFavoritedWitID:returnQuote.qID];
+    returnQuote = [QuotesStore composeQuoteFromRawArray:dataArray];
     
     return returnQuote;
 }
@@ -43,6 +40,31 @@
 + (BOOL)removeFromFavoriteQuoteWithID:(NSInteger)qID {
     eTypeQuoteStatus result = [[DayQuoteDBManager sharedInstance] removeQuoteFromFavoriteWithID:qID];
     return (result == eTypeQuoteStatusSuccessRemoved);
+}
+
++ (NSArray *)getAllFavoritesQuotes {
+    NSMutableArray *returnQuoteArray = [NSMutableArray new];
+    NSArray *rawDataArray = [[DayQuoteDBManager sharedInstance]  getAllFavoritedQuotesID];
+    for (NSNumber *qID in rawDataArray) {
+        NSArray *rawQuoteData = [[DayQuoteDBManager sharedInstance] getQuoteDataWithID:[qID integerValue]];
+        rawQuoteData = [rawQuoteData firstObject];
+        if (rawQuoteData) {
+            Quote *favoritedQuote = [QuotesStore composeQuoteFromRawArray:rawQuoteData];
+            [returnQuoteArray addObject:favoritedQuote];
+        }
+    }
+    return [returnQuoteArray copy];
+}
+
++ (Quote *)composeQuoteFromRawArray:(NSArray *)rawArray {
+    Quote *returnQuote = [[Quote alloc]init];
+    if (!rawArray) return returnQuote;
+    NSString *qID = (NSString *)rawArray[POSITION_ID];
+    returnQuote.qID = [qID integerValue];
+    returnQuote.quote = (NSString *)rawArray[POSITION_QUOTE];
+    returnQuote.author = (NSString *)rawArray[POSITION_AUTHOR];
+    returnQuote.favorited = [[DayQuoteDBManager sharedInstance] isQuoteFavoritedWitID:returnQuote.qID];
+    return returnQuote;
 }
 
 @end

@@ -20,7 +20,7 @@
 #define FAVORITE_BUTTON_INACTIVE_COLOR [UIColor colorWithRed:230/255.f green:230/255.f blue:230/255.f alpha:1]
 
 /* TBD
- Move Instagram sharing in to lib
+ Move Instagram sharing in to lib +
  Implement DQDBManager as shared manager
  Create prefix file
  */
@@ -57,6 +57,9 @@
     [gestureRecognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
     [self.view addGestureRecognizer:gestureRecognizer];
 }
+
+#pragma mark Buttons
+
 - (IBAction)onFavoriteButtonPress:(id)sender {
     if (currentQuote.favorited) {
         [QuotesStore removeFromFavoriteQuoteWithID:currentQuote.qID];
@@ -69,10 +72,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)onFacebookButtonPress:(id)sender {
     [[IndieGamesHelper sharedInstance] shareFacebookInViewController:self andText:[self getSharingText]];
 }
@@ -80,40 +79,12 @@
     [[IndieGamesHelper sharedInstance] shareTwitterInViewController:self andText:[self getSharingText]];
 }
 - (IBAction)onInstagramButtonPress:(id)sender {
-    //Remember Image must be larger than 612x612 size if not resize it.
-    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
     
-    if([[UIApplication sharedApplication] canOpenURL:instagramURL])
-    {
-        
-        UIGraphicsBeginImageContextWithOptions(self.viewQuote.bounds.size, self.viewQuote.opaque, 0.0);
-        [self.viewQuote.layer renderInContext:UIGraphicsGetCurrentContext()];
-        UIImage* theImage=UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
-        NSString *documentDirectory=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-        NSString *saveImagePath=[documentDirectory stringByAppendingPathComponent:@"ExportImage.ig"];
-        NSData *imageData=UIImagePNGRepresentation(theImage);
-        [imageData writeToFile:saveImagePath atomically:YES];
-        
-        NSURL *imageURL = [NSURL fileURLWithPath:saveImagePath];
-        
-        docController = [[UIDocumentInteractionController alloc]init];
-        docController.delegate = self;
-        docController.UTI= @"com.instagram.photo";
-        
-        docController.annotation=[NSDictionary dictionaryWithObjectsAndKeys:@"Image Taken via @DayQuote",@"InstagramCaption", nil];
-        
-        [docController setURL:imageURL];
-        
-        CGRect rect = CGRectMake(0, 0, 0, 0);
-        [docController presentOpenInMenuFromRect:rect inView:self.view animated:YES];
-    }
-    else
-    {
-        NSLog (@"Instagram not found");
-    }
-
+    self.buttonFavorite.hidden = YES;
+    UIImage *imageToShare = [self getImageOfQuote];
+    self.buttonFavorite.hidden = NO;
+    
+    [[IndieGamesHelper sharedInstance] shareInstagramInViewController:self withImage:imageToShare andText:@"Today Quote via @DayQuote"];
 }
 
 - (NSString *)getSharingText {
@@ -197,10 +168,17 @@
 - (void)changeFavoriteButtonToActive:(BOOL)active {
     if (active) {
         self.buttonFavorite.tintColor = FAVORITE_BUTTON_ACTIVE_COLOR;
-        
     } else {
         self.buttonFavorite.tintColor = FAVORITE_BUTTON_INACTIVE_COLOR;
     }
+}
+
+- (UIImage *)getImageOfQuote {
+    UIGraphicsBeginImageContextWithOptions(self.viewQuote.bounds.size, self.viewQuote.opaque, 0.0);
+    [self.viewQuote.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage* theImage=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 @end

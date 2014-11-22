@@ -50,7 +50,6 @@ typedef enum : NSUInteger {
  * @return NSArray with data from required quote ID
  */
 - (NSArray *)getQuoteDataWithID:(NSInteger)quoteID; // Unit Test +
-
 /**
  * Check if quote is favorited
  *

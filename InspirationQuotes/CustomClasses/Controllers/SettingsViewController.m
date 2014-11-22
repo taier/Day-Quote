@@ -9,7 +9,7 @@
 #import "SettingsViewController.h"
 #import "AppDelegate.h"
 #import "IndieGamesHelper.h"
-#import "ModalTransitionJumpRightAnimator.h"
+#import "ModalTransitionAnimator.h"
 
 #define LIKED_QUOTES_SEGUE_ID @"LIKED_QUOTES_SEQUE_ID"
 
@@ -78,11 +78,11 @@
 #pragma mark Animation Transition
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return [ModalTransitionJumpRightAnimator new];
+    return [ModalTransitionAnimator new];
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return [ModalTransitionJumpRightAnimator new];
+    return [ModalTransitionAnimator new];
 }
 
 @end

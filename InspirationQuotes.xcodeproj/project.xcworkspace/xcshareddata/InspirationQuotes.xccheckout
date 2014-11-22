@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>377F9F1A-B3DB-407D-B6E3-30B33D4D6EAB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>InspirationQuotes</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA05FF662D8088791C8F91FE6EAEA869B6B9D956</key>
+		<string>https://github.com/taier/Day-Quote.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>InspirationQuotes.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA05FF662D8088791C8F91FE6EAEA869B6B9D956</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/taier/Day-Quote.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA05FF662D8088791C8F91FE6EAEA869B6B9D956</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA05FF662D8088791C8F91FE6EAEA869B6B9D956</string>
+			<key>IDESourceControlWCCName</key>
+			<string>InspirationQuotes</string>
+		</dict>
+	</array>
+</dict>
+</plist>

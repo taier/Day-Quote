@@ -60,6 +60,8 @@
 
 - (void)shareTwitterInViewController:(UIViewController *)viewController andText:(NSString *)text;
 
+- (void)shareInstagramInViewController:(UIViewController*)viewController withImage:(UIImage *)image andText:(NSString *)text;
+
 // ***** LeaderBoard Methods *****
 - (void)authenticateLocalUser;
 

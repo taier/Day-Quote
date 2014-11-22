@@ -32,6 +32,7 @@
 
 @interface IndieGamesHelper () <InAppPurchaseDelegate, AdvertisingHandlerDelegate> {
      NSMutableArray *_delegatesReceiversArray;
+    SharingHandler *_strongSharingHelper;
 }
 
 @end
@@ -64,6 +65,10 @@ SINGLETON_GCD(IndieGamesHelper);
 
 - (void)shareTwitterInViewController:(UIViewController *)viewController andText:(NSString *)text {
     [SharingHandler shareTwitterInViewController:viewController andText:text];
+}
+- (void)shareInstagramInViewController:(UIViewController*)viewController withImage:(UIImage *)image andText:(NSString *)text {
+    _strongSharingHelper = [[SharingHandler alloc]init];
+    [_strongSharingHelper shareInstagramInViewController:viewController withImage:image andText:text];
 }
 
 #pragma mark Game Center

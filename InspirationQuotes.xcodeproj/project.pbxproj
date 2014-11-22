@@ -81,6 +81,8 @@
 		B7C43FD81A20C410007B564F /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F8C1A209860007B564F /* Quote.m */; };
 		B7C43FD91A20DF39007B564F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B793B60C1A1B751300FB29C4 /* Main.storyboard */; };
 		B7C43FDA1A20DF43007B564F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B793B6111A1B751300FB29C4 /* LaunchScreen.xib */; };
+		B7C43FDD1A20F3C1007B564F /* FavorQuotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43FDC1A20F3C1007B564F /* FavorQuotesTableViewController.m */; };
+		B7C43FE01A2100A0007B564F /* QuoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43FDF1A2100A0007B564F /* QuoteDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +262,10 @@
 		B7C43FC31A209AD1007B564F /* twitter.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = twitter.pdf; sourceTree = "<group>"; };
 		B7C43FD21A209B55007B564F /* PRODUCT_DB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = PRODUCT_DB.sql; sourceTree = "<group>"; };
 		B7C43FD41A209BEE007B564F /* DayQuoteDBManagerTestDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = DayQuoteDBManagerTestDB.sql; sourceTree = "<group>"; };
+		B7C43FDB1A20F3C1007B564F /* FavorQuotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorQuotesTableViewController.h; sourceTree = "<group>"; };
+		B7C43FDC1A20F3C1007B564F /* FavorQuotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorQuotesTableViewController.m; sourceTree = "<group>"; };
+		B7C43FDE1A2100A0007B564F /* QuoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDetailViewController.h; sourceTree = "<group>"; };
+		B7C43FDF1A2100A0007B564F /* QuoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +569,10 @@
 		B7C43F431A209860007B564F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B7C43FDE1A2100A0007B564F /* QuoteDetailViewController.h */,
+				B7C43FDF1A2100A0007B564F /* QuoteDetailViewController.m */,
+				B7C43FDB1A20F3C1007B564F /* FavorQuotesTableViewController.h */,
+				B7C43FDC1A20F3C1007B564F /* FavorQuotesTableViewController.m */,
 				B7C43F441A209860007B564F /* SettingsViewController.h */,
 				B7C43F451A209860007B564F /* SettingsViewController.m */,
 				B7C43F461A209860007B564F /* ViewController.h */,
@@ -966,9 +976,11 @@
 				B793B6051A1B751300FB29C4 /* AppDelegate.m in Sources */,
 				B793B6081A1B751300FB29C4 /* InspirationQuotes.xcdatamodeld in Sources */,
 				B7C43F961A209860007B564F /* DayQuoteDBManager.m in Sources */,
+				B7C43FE01A2100A0007B564F /* QuoteDetailViewController.m in Sources */,
 				B7C43F901A209860007B564F /* ModalTransitionJumpRightAnimator.m in Sources */,
 				B7C43F9A1A209860007B564F /* iADViewController.m in Sources */,
 				B7C43F981A209860007B564F /* AdvertisingBannerHelper.m in Sources */,
+				B7C43FDD1A20F3C1007B564F /* FavorQuotesTableViewController.m in Sources */,
 				B793B6021A1B751300FB29C4 /* main.m in Sources */,
 				B7C43F951A209860007B564F /* DBManager.m in Sources */,
 				B7C43F9F1A209860007B564F /* SharingHandler.m in Sources */,

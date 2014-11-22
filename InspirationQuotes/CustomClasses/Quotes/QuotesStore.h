@@ -30,6 +30,11 @@
  * @param qID ID of quote to add as favorited
  * @return YES if success
  */
-+ (BOOL)removeFromFavoriteQuoteWithID:(NSInteger)qID;
-
++ (BOOL)removeFromFavoriteQuoteWithID:(NSInteger)qID;  // Unit test +
+/**
+ * Compose array of quotes objects, from user favorited quotes
+ *
+ * @return NSArray with Quotes objects
+ */
++ (NSArray *)getAllFavoritesQuotes;
 @end

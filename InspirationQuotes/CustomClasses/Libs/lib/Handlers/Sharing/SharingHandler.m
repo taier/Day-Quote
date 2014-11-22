@@ -26,7 +26,9 @@
 @import Social;
 #import "SharingHandler.h"
 
-@implementation SharingHandler
+@implementation SharingHandler {
+    UIDocumentInteractionController *docController;
+}
 
 + (void)shareFacebookInViewController:(UIViewController *)viewController andText:(NSString *)text {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
@@ -43,6 +45,37 @@
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:text];
         [viewController presentViewController:tweetSheet animated:YES completion:nil];
+    }
+}
+
+- (void)shareInstagramInViewController:(UIViewController*)viewController withImage:(UIImage *)image andText:(NSString *)text {
+    //Remember Image must be larger than 612x612 size if not resize it.
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
+    
+    if([[UIApplication sharedApplication] canOpenURL:instagramURL])
+    {
+
+        NSString *documentDirectory=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        NSString *saveImagePath=[documentDirectory stringByAppendingPathComponent:@"ExportImage.ig"];
+        NSData *imageData=UIImagePNGRepresentation(image);
+        [imageData writeToFile:saveImagePath atomically:YES];
+        
+        NSURL *imageURL = [NSURL fileURLWithPath:saveImagePath];
+        
+        docController = [[UIDocumentInteractionController alloc]init];
+        docController.delegate = self;
+        docController.UTI= @"com.instagram.photo";
+        
+        docController.annotation=[NSDictionary dictionaryWithObjectsAndKeys:text,@"InstagramCaption", nil];
+        
+        [docController setURL:imageURL];
+        
+        CGRect rect = CGRectMake(0, 0, 0, 0);
+        [docController presentOpenInMenuFromRect:rect inView:viewController.view animated:YES];
+    }
+    else
+    {
+        NSLog (@"Instagram not found");
     }
 }
 
