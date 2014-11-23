@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #define NOTIFICATION_OFF_KEY @"Notification_OFF"
+#define NOTIFICATION_NEED_REFRESH_KEY @"Need_refresh_key"
 
 @interface AppDelegate ()
 
@@ -68,6 +69,12 @@
     [self setNofificationFromSettings:NO]; // if needed
  
     return YES;
+}
+
+
+
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)localNotification {
+   [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NEED_REFRESH_KEY object:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

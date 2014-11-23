@@ -12,6 +12,7 @@
 #import "ModalTransitionAnimator.h"
 #import "QuotesStore.h"
 
+#define NOTIFICATION_NEED_REFRESH_KEY @"Need_refresh_key"
 #define SWHIPE_TEXT_ANIMATION_RESTART_TIME 10
 #define SWHIPE_TEXT_ANIMATION_FIRST_TIME 2
 #define QUOTE_CHANGE_ANIMATION_DURATION 0.4
@@ -47,6 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpNotification];
     self.labelSwipeToRefresh.alpha = 0;
     [self performSelector:@selector(animateHelpTextForSwipe) withObject:nil afterDelay:SWHIPE_TEXT_ANIMATION_FIRST_TIME];
     [self changeQuoteAnimated:NO];
@@ -168,6 +170,20 @@
 -(void)swipeHandler:(UISwipeGestureRecognizer *)recognizer {
     refreshedBySwipe = YES;
     [self changeQuoteAnimated:YES];
+}
+
+#pragma mark Notifications 
+
+- (void)setUpNotification {
+    // Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivedNotification:)
+                                                 name:NOTIFICATION_NEED_REFRESH_KEY
+                                               object:nil];
+}
+
+- (void)receivedNotification:(NSNotification *) notification {
+    [self changeQuoteAnimated:NO];
 }
 
 #pragma mark Private Methods
