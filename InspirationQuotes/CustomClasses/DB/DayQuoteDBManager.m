@@ -93,6 +93,10 @@ static DayQuoteDBManager *_sharedInstce = nil;
     return [_dbManager loadDataFromBD:DB_GET_RANDOM_QUOTE_QUERY];
 }
 
+- (NSArray *)getRanomdQuoteDataForAppleWatch {
+    return [_dbManager loadDataForAppleWatchFromBD:DB_GET_RANDOM_QUOTE_QUERY];
+}
+
 #pragma mark Private Methods
 
 - (eTypeQuoteStatus)addQuoteWithText:(NSString *)text author:(NSString *)author {

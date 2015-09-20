@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B752A3C81AB4C7C80079485E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F4B1A209860007B564F /* DBManager.m */; };
+		B752A3C91AB4C7C80079485E /* DayQuoteDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F4D1A209860007B564F /* DayQuoteDBManager.m */; };
+		B752A3CA1AB4C7C80079485E /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F8C1A209860007B564F /* Quote.m */; };
+		B752A3CB1AB4C7C80079485E /* QuotesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F8E1A209860007B564F /* QuotesStore.m */; };
+		B752A3CD1AB4C7D50079485E /* PRODUCT_DB.sql in Resources */ = {isa = PBXBuildFile; fileRef = B7C43FD21A209B55007B564F /* PRODUCT_DB.sql */; };
+		B752A3CE1AB4C7DF0079485E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C43F241A1F918A007B564F /* libsqlite3.dylib */; };
 		B793B6021A1B751300FB29C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B793B6011A1B751300FB29C4 /* main.m */; };
 		B793B6051A1B751300FB29C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B793B6041A1B751300FB29C4 /* AppDelegate.m */; };
 		B793B6081A1B751300FB29C4 /* InspirationQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B793B6061A1B751300FB29C4 /* InspirationQuotes.xcdatamodeld */; };
@@ -43,12 +49,6 @@
 		B7C43F931A209860007B564F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F471A209860007B564F /* ViewController.m */; };
 		B7C43F951A209860007B564F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F4B1A209860007B564F /* DBManager.m */; };
 		B7C43F961A209860007B564F /* DayQuoteDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F4D1A209860007B564F /* DayQuoteDBManager.m */; };
-		B7C43F971A209860007B564F /* AdvertisingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F531A209860007B564F /* AdvertisingHandler.m */; };
-		B7C43F981A209860007B564F /* AdvertisingBannerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F561A209860007B564F /* AdvertisingBannerHelper.m */; };
-		B7C43F991A209860007B564F /* AdvertisingFullScreenHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F591A209860007B564F /* AdvertisingFullScreenHelper.m */; };
-		B7C43F9A1A209860007B564F /* iADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F5B1A209860007B564F /* iADViewController.m */; };
-		B7C43F9B1A209860007B564F /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C43F7C1A209860007B564F /* libGoogleAdMobAds.a */; };
-		B7C43F9C1A209860007B564F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7C43F7D1A209860007B564F /* README.txt */; };
 		B7C43F9D1A209860007B564F /* GameCenterHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F801A209860007B564F /* GameCenterHandler.m */; };
 		B7C43F9E1A209860007B564F /* InAppPurchaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F831A209860007B564F /* InAppPurchaseHandler.m */; };
 		B7C43F9F1A209860007B564F /* SharingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43F861A209860007B564F /* SharingHandler.m */; };
@@ -83,6 +83,12 @@
 		B7C43FDA1A20DF43007B564F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B793B6111A1B751300FB29C4 /* LaunchScreen.xib */; };
 		B7C43FDD1A20F3C1007B564F /* FavorQuotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43FDC1A20F3C1007B564F /* FavorQuotesTableViewController.m */; };
 		B7C43FE01A2100A0007B564F /* QuoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C43FDF1A2100A0007B564F /* QuoteDetailViewController.m */; };
+		B7E875DC1AB4C6C60022F38F /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E875DB1AB4C6C60022F38F /* InterfaceController.m */; };
+		B7E875DE1AB4C6C60022F38F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E875DD1AB4C6C60022F38F /* Images.xcassets */; };
+		B7E875E21AB4C6C60022F38F /* Day Quote WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = B7E875E11AB4C6C60022F38F /* Day Quote WatchKit App.app */; };
+		B7E875EA1AB4C6C60022F38F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E875E81AB4C6C60022F38F /* Interface.storyboard */; };
+		B7E875EC1AB4C6C70022F38F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7E875EB1AB4C6C70022F38F /* Images.xcassets */; };
+		B7E875EF1AB4C6C70022F38F /* Day Quote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B7E875D61AB4C6C60022F38F /* Day Quote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +99,35 @@
 			remoteGlobalIDString = B793B5FB1A1B751300FB29C4;
 			remoteInfo = InspirationQuotes;
 		};
+		B7E875E31AB4C6C60022F38F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B793B5F41A1B751300FB29C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E875E01AB4C6C60022F38F;
+			remoteInfo = "Day Quote WatchKit App";
+		};
+		B7E875ED1AB4C6C70022F38F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B793B5F41A1B751300FB29C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7E875D51AB4C6C60022F38F;
+			remoteInfo = "Day Quote WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B7E875C21AB4B8970022F38F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B7E875EF1AB4C6C70022F38F /* Day Quote WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B793B5FC1A1B751300FB29C4 /* DayQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,43 +223,6 @@
 		B7C43F4B1A209860007B564F /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		B7C43F4C1A209860007B564F /* DayQuoteDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayQuoteDBManager.h; sourceTree = "<group>"; };
 		B7C43F4D1A209860007B564F /* DayQuoteDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayQuoteDBManager.m; sourceTree = "<group>"; };
-		B7C43F521A209860007B564F /* AdvertisingHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingHandler.h; sourceTree = "<group>"; };
-		B7C43F531A209860007B564F /* AdvertisingHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingHandler.m; sourceTree = "<group>"; };
-		B7C43F551A209860007B564F /* AdvertisingBannerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingBannerHelper.h; sourceTree = "<group>"; };
-		B7C43F561A209860007B564F /* AdvertisingBannerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingBannerHelper.m; sourceTree = "<group>"; };
-		B7C43F581A209860007B564F /* AdvertisingFullScreenHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingFullScreenHelper.h; sourceTree = "<group>"; };
-		B7C43F591A209860007B564F /* AdvertisingFullScreenHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingFullScreenHelper.m; sourceTree = "<group>"; };
-		B7C43F5A1A209860007B564F /* iADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iADViewController.h; sourceTree = "<group>"; };
-		B7C43F5B1A209860007B564F /* iADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iADViewController.m; sourceTree = "<group>"; };
-		B7C43F5F1A209860007B564F /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerView.h; sourceTree = "<group>"; };
-		B7C43F601A209860007B564F /* DFPExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPExtras.h; sourceTree = "<group>"; };
-		B7C43F611A209860007B564F /* DFPInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPInterstitial.h; sourceTree = "<group>"; };
-		B7C43F621A209860007B564F /* DFPSwipeableBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPSwipeableBannerView.h; sourceTree = "<group>"; };
-		B7C43F631A209860007B564F /* GADAdSizeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSizeDelegate.h; sourceTree = "<group>"; };
-		B7C43F641A209860007B564F /* GADAppEventDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAppEventDelegate.h; sourceTree = "<group>"; };
-		B7C43F651A209860007B564F /* GADSwipeableBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSwipeableBannerViewDelegate.h; sourceTree = "<group>"; };
-		B7C43F671A209860007B564F /* GADCustomEventBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventBanner.h; sourceTree = "<group>"; };
-		B7C43F681A209860007B564F /* GADCustomEventBannerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventBannerDelegate.h; sourceTree = "<group>"; };
-		B7C43F691A209860007B564F /* GADCustomEventExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventExtras.h; sourceTree = "<group>"; };
-		B7C43F6A1A209860007B564F /* GADCustomEventInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventInterstitial.h; sourceTree = "<group>"; };
-		B7C43F6B1A209860007B564F /* GADCustomEventInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventInterstitialDelegate.h; sourceTree = "<group>"; };
-		B7C43F6C1A209860007B564F /* GADCustomEventRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventRequest.h; sourceTree = "<group>"; };
-		B7C43F6E1A209860007B564F /* GADSearchBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSearchBannerView.h; sourceTree = "<group>"; };
-		B7C43F6F1A209860007B564F /* GADSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSearchRequest.h; sourceTree = "<group>"; };
-		B7C43F701A209860007B564F /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
-		B7C43F711A209860007B564F /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
-		B7C43F721A209860007B564F /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
-		B7C43F731A209860007B564F /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
-		B7C43F741A209860007B564F /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
-		B7C43F751A209860007B564F /* GADInAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchase.h; sourceTree = "<group>"; };
-		B7C43F761A209860007B564F /* GADInAppPurchaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInAppPurchaseDelegate.h; sourceTree = "<group>"; };
-		B7C43F771A209860007B564F /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
-		B7C43F781A209860007B564F /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
-		B7C43F791A209860007B564F /* GADModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADModules.h; sourceTree = "<group>"; };
-		B7C43F7A1A209860007B564F /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
-		B7C43F7B1A209860007B564F /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
-		B7C43F7C1A209860007B564F /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
-		B7C43F7D1A209860007B564F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		B7C43F7F1A209860007B564F /* GameCenterHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterHandler.h; sourceTree = "<group>"; };
 		B7C43F801A209860007B564F /* GameCenterHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterHandler.m; sourceTree = "<group>"; };
 		B7C43F821A209860007B564F /* InAppPurchaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseHandler.h; sourceTree = "<group>"; };
@@ -266,6 +263,15 @@
 		B7C43FDC1A20F3C1007B564F /* FavorQuotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorQuotesTableViewController.m; sourceTree = "<group>"; };
 		B7C43FDE1A2100A0007B564F /* QuoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteDetailViewController.h; sourceTree = "<group>"; };
 		B7C43FDF1A2100A0007B564F /* QuoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteDetailViewController.m; sourceTree = "<group>"; };
+		B7E875D61AB4C6C60022F38F /* Day Quote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Day Quote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7E875D91AB4C6C60022F38F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7E875DA1AB4C6C60022F38F /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		B7E875DB1AB4C6C60022F38F /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		B7E875DD1AB4C6C60022F38F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B7E875E11AB4C6C60022F38F /* Day Quote WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day Quote WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7E875E71AB4C6C60022F38F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7E875E91AB4C6C60022F38F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B7E875EB1AB4C6C70022F38F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C43F251A1F918A007B564F /* libsqlite3.dylib in Frameworks */,
-				B7C43F9B1A209860007B564F /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +291,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7E875D31AB4C6C60022F38F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B752A3CE1AB4C7DF0079485E /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -294,6 +307,8 @@
 			children = (
 				B793B5FE1A1B751300FB29C4 /* InspirationQuotes */,
 				B793B61B1A1B751300FB29C4 /* InspirationQuotesTests */,
+				B7E875D71AB4C6C60022F38F /* Day Quote WatchKit Extension */,
+				B7E875E51AB4C6C60022F38F /* Day Quote WatchKit App */,
 				B793B5FD1A1B751300FB29C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -303,6 +318,8 @@
 			children = (
 				B793B5FC1A1B751300FB29C4 /* DayQuote.app */,
 				B793B6181A1B751300FB29C4 /* InspirationQuotesTests.xctest */,
+				B7E875D61AB4C6C60022F38F /* Day Quote WatchKit Extension.appex */,
+				B7E875E11AB4C6C60022F38F /* Day Quote WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -618,112 +635,11 @@
 		B7C43F501A209860007B564F /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				B7C43F511A209860007B564F /* Advertising */,
 				B7C43F7E1A209860007B564F /* GameCenter */,
 				B7C43F811A209860007B564F /* InAppPurchase */,
 				B7C43F841A209860007B564F /* Sharing */,
 			);
 			path = Handlers;
-			sourceTree = "<group>";
-		};
-		B7C43F511A209860007B564F /* Advertising */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F521A209860007B564F /* AdvertisingHandler.h */,
-				B7C43F531A209860007B564F /* AdvertisingHandler.m */,
-				B7C43F541A209860007B564F /* Banner */,
-				B7C43F571A209860007B564F /* FullScreen */,
-				B7C43F5C1A209860007B564F /* Google AD SDK */,
-			);
-			path = Advertising;
-			sourceTree = "<group>";
-		};
-		B7C43F541A209860007B564F /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F551A209860007B564F /* AdvertisingBannerHelper.h */,
-				B7C43F561A209860007B564F /* AdvertisingBannerHelper.m */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
-		B7C43F571A209860007B564F /* FullScreen */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F581A209860007B564F /* AdvertisingFullScreenHelper.h */,
-				B7C43F591A209860007B564F /* AdvertisingFullScreenHelper.m */,
-				B7C43F5A1A209860007B564F /* iADViewController.h */,
-				B7C43F5B1A209860007B564F /* iADViewController.m */,
-			);
-			path = FullScreen;
-			sourceTree = "<group>";
-		};
-		B7C43F5C1A209860007B564F /* Google AD SDK */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F5D1A209860007B564F /* Add-ons */,
-				B7C43F701A209860007B564F /* GADAdMobExtras.h */,
-				B7C43F711A209860007B564F /* GADAdNetworkExtras.h */,
-				B7C43F721A209860007B564F /* GADAdSize.h */,
-				B7C43F731A209860007B564F /* GADBannerView.h */,
-				B7C43F741A209860007B564F /* GADBannerViewDelegate.h */,
-				B7C43F751A209860007B564F /* GADInAppPurchase.h */,
-				B7C43F761A209860007B564F /* GADInAppPurchaseDelegate.h */,
-				B7C43F771A209860007B564F /* GADInterstitial.h */,
-				B7C43F781A209860007B564F /* GADInterstitialDelegate.h */,
-				B7C43F791A209860007B564F /* GADModules.h */,
-				B7C43F7A1A209860007B564F /* GADRequest.h */,
-				B7C43F7B1A209860007B564F /* GADRequestError.h */,
-				B7C43F7C1A209860007B564F /* libGoogleAdMobAds.a */,
-				B7C43F7D1A209860007B564F /* README.txt */,
-			);
-			path = "Google AD SDK";
-			sourceTree = "<group>";
-		};
-		B7C43F5D1A209860007B564F /* Add-ons */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F5E1A209860007B564F /* DoubleClick */,
-				B7C43F661A209860007B564F /* Mediation */,
-				B7C43F6D1A209860007B564F /* Search */,
-			);
-			path = "Add-ons";
-			sourceTree = "<group>";
-		};
-		B7C43F5E1A209860007B564F /* DoubleClick */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F5F1A209860007B564F /* DFPBannerView.h */,
-				B7C43F601A209860007B564F /* DFPExtras.h */,
-				B7C43F611A209860007B564F /* DFPInterstitial.h */,
-				B7C43F621A209860007B564F /* DFPSwipeableBannerView.h */,
-				B7C43F631A209860007B564F /* GADAdSizeDelegate.h */,
-				B7C43F641A209860007B564F /* GADAppEventDelegate.h */,
-				B7C43F651A209860007B564F /* GADSwipeableBannerViewDelegate.h */,
-			);
-			path = DoubleClick;
-			sourceTree = "<group>";
-		};
-		B7C43F661A209860007B564F /* Mediation */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F671A209860007B564F /* GADCustomEventBanner.h */,
-				B7C43F681A209860007B564F /* GADCustomEventBannerDelegate.h */,
-				B7C43F691A209860007B564F /* GADCustomEventExtras.h */,
-				B7C43F6A1A209860007B564F /* GADCustomEventInterstitial.h */,
-				B7C43F6B1A209860007B564F /* GADCustomEventInterstitialDelegate.h */,
-				B7C43F6C1A209860007B564F /* GADCustomEventRequest.h */,
-			);
-			path = Mediation;
-			sourceTree = "<group>";
-		};
-		B7C43F6D1A209860007B564F /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				B7C43F6E1A209860007B564F /* GADSearchBannerView.h */,
-				B7C43F6F1A209860007B564F /* GADSearchRequest.h */,
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 		B7C43F7E1A209860007B564F /* GameCenter */ = {
@@ -826,6 +742,43 @@
 			path = Recources/Images;
 			sourceTree = "<group>";
 		};
+		B7E875D71AB4C6C60022F38F /* Day Quote WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B7E875DA1AB4C6C60022F38F /* InterfaceController.h */,
+				B7E875DB1AB4C6C60022F38F /* InterfaceController.m */,
+				B7E875DD1AB4C6C60022F38F /* Images.xcassets */,
+				B7E875D81AB4C6C60022F38F /* Supporting Files */,
+			);
+			path = "Day Quote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B7E875D81AB4C6C60022F38F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7E875D91AB4C6C60022F38F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7E875E51AB4C6C60022F38F /* Day Quote WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				B7E875E81AB4C6C60022F38F /* Interface.storyboard */,
+				B7E875EB1AB4C6C70022F38F /* Images.xcassets */,
+				B7E875E61AB4C6C60022F38F /* Supporting Files */,
+			);
+			path = "Day Quote WatchKit App";
+			sourceTree = "<group>";
+		};
+		B7E875E61AB4C6C60022F38F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7E875E71AB4C6C60022F38F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -836,10 +789,12 @@
 				B793B5F81A1B751300FB29C4 /* Sources */,
 				B793B5F91A1B751300FB29C4 /* Frameworks */,
 				B793B5FA1A1B751300FB29C4 /* Resources */,
+				B7E875C21AB4B8970022F38F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B7E875EE1AB4C6C70022F38F /* PBXTargetDependency */,
 			);
 			name = InspirationQuotes;
 			productName = InspirationQuotes;
@@ -864,6 +819,39 @@
 			productReference = B793B6181A1B751300FB29C4 /* InspirationQuotesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B7E875D51AB4C6C60022F38F /* Day Quote WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7E875F31AB4C6C70022F38F /* Build configuration list for PBXNativeTarget "Day Quote WatchKit Extension" */;
+			buildPhases = (
+				B7E875D21AB4C6C60022F38F /* Sources */,
+				B7E875D31AB4C6C60022F38F /* Frameworks */,
+				B7E875D41AB4C6C60022F38F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7E875E41AB4C6C60022F38F /* PBXTargetDependency */,
+			);
+			name = "Day Quote WatchKit Extension";
+			productName = "Day Quote WatchKit Extension";
+			productReference = B7E875D61AB4C6C60022F38F /* Day Quote WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		B7E875E01AB4C6C60022F38F /* Day Quote WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7E875F01AB4C6C70022F38F /* Build configuration list for PBXNativeTarget "Day Quote WatchKit App" */;
+			buildPhases = (
+				B7E875DF1AB4C6C60022F38F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Day Quote WatchKit App";
+			productName = "Day Quote WatchKit App";
+			productReference = B7E875E11AB4C6C60022F38F /* Day Quote WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -880,6 +868,14 @@
 					B793B6171A1B751300FB29C4 = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = B793B5FB1A1B751300FB29C4;
+					};
+					B7E875D51AB4C6C60022F38F = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 99TE4Z2NY7;
+					};
+					B7E875E01AB4C6C60022F38F = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 99TE4Z2NY7;
 					};
 				};
 			};
@@ -898,6 +894,8 @@
 			targets = (
 				B793B5FB1A1B751300FB29C4 /* InspirationQuotes */,
 				B793B6171A1B751300FB29C4 /* InspirationQuotesTests */,
+				B7E875D51AB4C6C60022F38F /* Day Quote WatchKit Extension */,
+				B7E875E01AB4C6C60022F38F /* Day Quote WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -926,7 +924,6 @@
 				B7C43FCE1A209AD1007B564F /* instagram.pdf in Resources */,
 				B7C43FC41A209AD1007B564F /* AD_remove.pdf in Resources */,
 				B7C43EB91A1CEE3C007B564F /* appicon-76@2x.png in Resources */,
-				B7C43F9C1A209860007B564F /* README.txt in Resources */,
 				B7C43FD01A209AD1007B564F /* settings_png.png in Resources */,
 				B7C43EB31A1CEE3C007B564F /* appicon-60.png in Resources */,
 				B7C43FD71A209CB2007B564F /* DayQuoteDBManagerTestDB.sql in Resources */,
@@ -963,6 +960,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7E875D41AB4C6C60022F38F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B752A3CD1AB4C7D50079485E /* PRODUCT_DB.sql in Resources */,
+				B7E875DE1AB4C6C60022F38F /* Images.xcassets in Resources */,
+				B7E875E21AB4C6C60022F38F /* Day Quote WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7E875DF1AB4C6C60022F38F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7E875EA1AB4C6C60022F38F /* Interface.storyboard in Resources */,
+				B7E875EC1AB4C6C70022F38F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -978,20 +994,16 @@
 				B7C43F961A209860007B564F /* DayQuoteDBManager.m in Sources */,
 				B7C43FE01A2100A0007B564F /* QuoteDetailViewController.m in Sources */,
 				B7C43F901A209860007B564F /* ModalTransitionJumpRightAnimator.m in Sources */,
-				B7C43F9A1A209860007B564F /* iADViewController.m in Sources */,
-				B7C43F981A209860007B564F /* AdvertisingBannerHelper.m in Sources */,
 				B7C43FDD1A20F3C1007B564F /* FavorQuotesTableViewController.m in Sources */,
 				B793B6021A1B751300FB29C4 /* main.m in Sources */,
 				B7C43F951A209860007B564F /* DBManager.m in Sources */,
 				B7C43F9F1A209860007B564F /* SharingHandler.m in Sources */,
-				B7C43F991A209860007B564F /* AdvertisingFullScreenHelper.m in Sources */,
 				B7C43F931A209860007B564F /* ViewController.m in Sources */,
 				B7C43F8F1A209860007B564F /* ModalTransitionAnimator.m in Sources */,
 				B7C43FA21A209860007B564F /* QuotesStore.m in Sources */,
 				B7C43F9D1A209860007B564F /* GameCenterHandler.m in Sources */,
 				B7C43FA01A209860007B564F /* IndieGamesHelper.m in Sources */,
 				B7C43F921A209860007B564F /* SettingsViewController.m in Sources */,
-				B7C43F971A209860007B564F /* AdvertisingHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,6 +1019,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7E875D21AB4C6C60022F38F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B752A3C81AB4C7C80079485E /* DBManager.m in Sources */,
+				B752A3C91AB4C7C80079485E /* DayQuoteDBManager.m in Sources */,
+				B752A3CA1AB4C7C80079485E /* Quote.m in Sources */,
+				B752A3CB1AB4C7C80079485E /* QuotesStore.m in Sources */,
+				B7E875DC1AB4C6C60022F38F /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1014,6 +1038,16 @@
 			isa = PBXTargetDependency;
 			target = B793B5FB1A1B751300FB29C4 /* InspirationQuotes */;
 			targetProxy = B793B6191A1B751300FB29C4 /* PBXContainerItemProxy */;
+		};
+		B7E875E41AB4C6C60022F38F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E875E01AB4C6C60022F38F /* Day Quote WatchKit App */;
+			targetProxy = B7E875E31AB4C6C60022F38F /* PBXContainerItemProxy */;
+		};
+		B7E875EE1AB4C6C70022F38F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7E875D51AB4C6C60022F38F /* Day Quote WatchKit Extension */;
+			targetProxy = B7E875ED1AB4C6C70022F38F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1033,6 +1067,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = InspirationQuotes;
+			sourceTree = "<group>";
+		};
+		B7E875E81AB4C6C60022F38F /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7E875E91AB4C6C60022F38F /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1119,7 +1161,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1132,7 +1174,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = DayQuote;
-				PROVISIONING_PROFILE = "57c0cc77-d790-46b8-87f2-bee986fcc759";
+				PROVISIONING_PROFILE = "a193954b-5637-4f64-97d0-7b9d4aa7fa26";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1142,7 +1184,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1155,7 +1197,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = DayQuote;
-				PROVISIONING_PROFILE = "57c0cc77-d790-46b8-87f2-bee986fcc759";
+				PROVISIONING_PROFILE = "a193954b-5637-4f64-97d0-7b9d4aa7fa26";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1202,6 +1244,68 @@
 			};
 			name = Release;
 		};
+		B7E875F11AB4C6C70022F38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Day_Quote_WatchKit_Extension;
+				INFOPLIST_FILE = "Day Quote WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		B7E875F21AB4C6C70022F38F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = Day_Quote_WatchKit_Extension;
+				INFOPLIST_FILE = "Day Quote WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		B7E875F41AB4C6C70022F38F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Day Quote WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B7E875F51AB4C6C70022F38F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "Day Quote WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1228,6 +1332,24 @@
 			buildConfigurations = (
 				B793B6261A1B751300FB29C4 /* Debug */,
 				B793B6271A1B751300FB29C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7E875F01AB4C6C70022F38F /* Build configuration list for PBXNativeTarget "Day Quote WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7E875F11AB4C6C70022F38F /* Debug */,
+				B7E875F21AB4C6C70022F38F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7E875F31AB4C6C70022F38F /* Build configuration list for PBXNativeTarget "Day Quote WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7E875F41AB4C6C70022F38F /* Debug */,
+				B7E875F51AB4C6C70022F38F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

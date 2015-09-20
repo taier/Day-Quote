@@ -64,4 +64,6 @@ typedef enum : NSUInteger {
  */
 - (NSArray *)getRanomdQuoteData;
 
+- (NSArray *)getRanomdQuoteDataForAppleWatch;
+
 @end

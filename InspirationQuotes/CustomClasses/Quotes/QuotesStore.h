@@ -23,6 +23,9 @@
  * @param qID ID of quote to add as favotired
  * @return YES if success
  */
+
++ (Quote *)getRandomQuoteForAppleWatch;
+
 + (BOOL)addToFavoriteQuoteWithID:(NSInteger)qID; // Unit test +
 /**
  * Remove recond from liked_quotes about quote

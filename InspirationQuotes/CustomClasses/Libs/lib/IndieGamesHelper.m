@@ -28,9 +28,8 @@
 #import "SharingHandler.h"
 #import "GameCenterHandler.h"
 #import "InAppPurchaseHandler.h"
-#import "AdvertisingHandler.h"
 
-@interface IndieGamesHelper () <InAppPurchaseDelegate, AdvertisingHandlerDelegate> {
+@interface IndieGamesHelper () <InAppPurchaseDelegate> {
      NSMutableArray *_delegatesReceiversArray;
     SharingHandler *_strongSharingHelper;
 }
@@ -45,7 +44,6 @@ SINGLETON_GCD(IndieGamesHelper);
     self = [super init];
     if (self) {
         [InAppPurchaseHandler sharedInstance].delegate = self;
-        [AdvertisingHandler sharedInstance].delegate = self;
         _delegatesReceiversArray = [NSMutableArray new];
     }
     return self;
@@ -108,19 +106,19 @@ SINGLETON_GCD(IndieGamesHelper);
 #pragma mark Advertising Methods
 
 - (void)prepareFullScreenAdvertInViewController:(UIViewController *)viewController {
-    [[AdvertisingHandler sharedInstance] prepareFullScreenAdvertInViewController:viewController];
+//    [[AdvertisingHandler sharedInstance] prepareFullScreenAdvertInViewController:viewController];
 }
 
 - (void)showFullScreenAdvertIfLoadedInViewController:(UIViewController *)viewController {
-    [[AdvertisingHandler sharedInstance] showFullScreenAdvertIfLoadedInViewController:viewController];
+//    [[AdvertisingHandler sharedInstance] showFullScreenAdvertIfLoadedInViewController:viewController];
 }
 
 - (void)prepareBannerAdvertInViewController:(UIViewController *)viewController withSize:(AdvertBannerSize)bannerSize {
-    [[AdvertisingHandler sharedInstance] prepareBannerAdvertInViewController:viewController withSize:bannerSize];
+//    [[AdvertisingHandler sharedInstance] prepareBannerAdvertInViewController:viewController withSize:bannerSize];
 }
 
 - (void)showBannerAdvertIfLoadedInViewController:(UIViewController *)viewController withBannerCenter:(CGPoint)center andSize:(AdvertBannerSize)bannerSize {
-    [[AdvertisingHandler sharedInstance] showBannerAdverIfLoadedInViewController:viewController withBannerCenter:center andSize:bannerSize];
+//    [[AdvertisingHandler sharedInstance] showBannerAdverIfLoadedInViewController:viewController withBannerCenter:center andSize:bannerSize];
 }
 
 #pragma mark Advertising Delegates

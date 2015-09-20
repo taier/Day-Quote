@@ -16,6 +16,7 @@
 
 - (instancetype)initWithDatabaseFileName:(NSString *)dbFileName;
 - (NSArray *)loadDataFromBD:(NSString *)query;
+- (NSArray *)loadDataForAppleWatchFromBD:(NSString *)query;
 - (BOOL)executeQuery:(NSString *)query;
 
 @end

@@ -34,6 +34,15 @@
     return returnQuote;
 }
 
++ (Quote *)getRandomQuoteForAppleWatch {
+    Quote *returnQuote = [[Quote alloc]init];
+    NSArray *rawDataArray = [[DayQuoteDBManager sharedInstance] getRanomdQuoteDataForAppleWatch];
+    NSArray *dataArray = [rawDataArray firstObject];
+    returnQuote = [QuotesStore composeQuoteFromRawArray:dataArray];
+    
+    return returnQuote;
+}
+
 + (BOOL)addToFavoriteQuoteWithID:(NSInteger)qID {
     eTypeQuoteStatus result = [[DayQuoteDBManager sharedInstance] addQuoteToFavoriteWithID:qID];
     return (result == eTypeQuoteStatusSuccessAdded);
