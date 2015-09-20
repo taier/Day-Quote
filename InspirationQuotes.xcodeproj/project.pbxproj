@@ -15,7 +15,6 @@
 		B7C43EB41A1CEE3C007B564F /* appicon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EA41A1CEE3C007B564F /* appicon-60@2x.png */; };
 		B7C43EB51A1CEE3C007B564F /* appicon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EA51A1CEE3C007B564F /* appicon-60@3x.png */; };
 		B7C43EB61A1CEE3C007B564F /* appicon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EA61A1CEE3C007B564F /* appicon-72.png */; };
-		B7C43EB71A1CEE3C007B564F /* appicon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EA71A1CEE3C007B564F /* appicon-72@2x.png */; };
 		B7C43EB81A1CEE3C007B564F /* appicon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EA81A1CEE3C007B564F /* appicon-76.png */; };
 		B7C43EB91A1CEE3C007B564F /* appicon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EA91A1CEE3C007B564F /* appicon-76@2x.png */; };
 		B7C43EBA1A1CEE3C007B564F /* appicon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C43EAA1A1CEE3C007B564F /* appicon-Small-40.png */; };
@@ -155,7 +154,6 @@
 		B7C43EA41A1CEE3C007B564F /* appicon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-60@2x.png"; path = "InspirationQuotes/Recources/icons/appicon-60@2x.png"; sourceTree = "<group>"; };
 		B7C43EA51A1CEE3C007B564F /* appicon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-60@3x.png"; path = "InspirationQuotes/Recources/icons/appicon-60@3x.png"; sourceTree = "<group>"; };
 		B7C43EA61A1CEE3C007B564F /* appicon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-72.png"; path = "InspirationQuotes/Recources/icons/appicon-72.png"; sourceTree = "<group>"; };
-		B7C43EA71A1CEE3C007B564F /* appicon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-72@2x.png"; path = "InspirationQuotes/Recources/icons/appicon-72@2x.png"; sourceTree = "<group>"; };
 		B7C43EA81A1CEE3C007B564F /* appicon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-76.png"; path = "InspirationQuotes/Recources/icons/appicon-76.png"; sourceTree = "<group>"; };
 		B7C43EA91A1CEE3C007B564F /* appicon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-76@2x.png"; path = "InspirationQuotes/Recources/icons/appicon-76@2x.png"; sourceTree = "<group>"; };
 		B7C43EAA1A1CEE3C007B564F /* appicon-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-Small-40.png"; path = "InspirationQuotes/Recources/icons/appicon-Small-40.png"; sourceTree = "<group>"; };
@@ -511,7 +509,6 @@
 				B7C43EA41A1CEE3C007B564F /* appicon-60@2x.png */,
 				B7C43EA51A1CEE3C007B564F /* appicon-60@3x.png */,
 				B7C43EA61A1CEE3C007B564F /* appicon-72.png */,
-				B7C43EA71A1CEE3C007B564F /* appicon-72@2x.png */,
 				B7C43EA81A1CEE3C007B564F /* appicon-76.png */,
 				B7C43EA91A1CEE3C007B564F /* appicon-76@2x.png */,
 				B7C43EAA1A1CEE3C007B564F /* appicon-Small-40.png */,
@@ -918,7 +915,6 @@
 				B7C43EBB1A1CEE3C007B564F /* appicon-Small-40@2x.png in Resources */,
 				B7C43EC11A1CEE3C007B564F /* appicon.png in Resources */,
 				B7C43ECB1A1CF2D7007B564F /* Default-667h@2x.png in Resources */,
-				B7C43EB71A1CEE3C007B564F /* appicon-72@2x.png in Resources */,
 				B7C43FC71A209AD1007B564F /* coffe-middle.png in Resources */,
 				B7C43EB81A1CEE3C007B564F /* appicon-76.png in Resources */,
 				B7C43EB41A1CEE3C007B564F /* appicon-60@2x.png in Resources */,
@@ -1055,7 +1051,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Deniss Kaibagarovs (C23ABQL56D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Deniss Kaibagarovs (C23ABQL56D)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1075,6 +1072,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "eb1ddfce-be50-4551-be99-06e8c8b6836e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1096,7 +1094,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Deniss Kaibagarovs (C23ABQL56D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Deniss Kaibagarovs (C23ABQL56D)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1109,6 +1108,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "eb1ddfce-be50-4551-be99-06e8c8b6836e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1120,6 +1120,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1143,6 +1144,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
